@@ -1,0 +1,54 @@
+{% extends 'security/navbar.html'%}
+
+{% block content%}
+<div class="container h-100  w-55 p-3 fixed-top  ">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+
+            <!-- Form -->
+            <span class="login border-dark">
+                <h3 style="text-align:center">Login Page</h3><br>
+
+            <form id="form" class="form-example" method="post" name="registration">
+
+                {% csrf_token %}
+
+
+                <div class="form-group">
+                    <!--                        <label for="username">Username:</label>-->
+                    <input type="text" class="form-control username" id="username" placeholder="Username..."
+                           name="username"><span class="error_form" id="username_error_message"></span>
+                </div>
+
+                <div class="form-group">
+                    <!--                        <label for="password">Password:</label>-->
+
+                    <input type="password" class="form-control password" id="password" placeholder="Password..."
+                           name="password" required="true"><span class="error_form" id="password_error_message"></span>
+                </div>
+
+                <div class="form-group">
+                    Don't have an account? <a href="{% url 'sign_up'%}" target="blank"><strong>Sign up</strong></a>!
+
+<!--                     <a href="{% url 'sign_up'%}" class="nav-link" >Don't have an account? Sign up</a>-->
+
+
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary btn-lg btn-block"  id="btnSubmit">Login</button>
+                <!-- End input fields -->
+
+
+                .
+                </p>
+
+            </form>
+
+            </span>
+            <!-- Form end -->
+        </div>
+    </div>
+</div>
+{% endblock %}
